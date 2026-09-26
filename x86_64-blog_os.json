@@ -6,6 +6,8 @@
     "target-c-int-width": 32,
     "os": "none",
     "disable-redzone": true,
+    "features": "-mmx,-sse,+soft-float", 
+    "rustc-abi":"softfloat",
     "executables": true,
     "linker-flavor": "ld.lld",
 "linker": "rust-lld",
