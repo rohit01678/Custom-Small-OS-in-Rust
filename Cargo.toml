@@ -6,7 +6,7 @@ authors = ["Rohit Chaudhary"]
 
 
 [dependencies]
-
+bootloader = "~0.9.8"
 
 
 [[bin]]
