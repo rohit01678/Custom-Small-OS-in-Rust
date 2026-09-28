@@ -6,7 +6,8 @@ Hello Everyone.
 I am currently  working on this Project.
 # Compiler
 1.You need to install a rust compiler in your code editor,I am using VS code in this case but you use whatever code editor you wantt so let's start this journey of making badass projects to become better at coding.\
-2.Install Rust nightly tools for congfig.toml for targeting json file beacause it will not set as a target until you install nightly.\
+2.Install Rust nightly tools for congfig.toml for targeting json file beacause it will not set as a target until you install nightly and install  tool required for your build.
+
 3.After installing QEMU virtual matchine,U need to bootload the main file with nightly tools,I am mentioning the commands below i used to print the hello world program.
 # COMMANDS 
 for bootloading.
