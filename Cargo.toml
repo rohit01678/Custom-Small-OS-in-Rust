@@ -2,14 +2,14 @@
 name = "rust_os"
 version = "0.1.0"
 edition = "2024"
-authors = ["Rohit Chaudhary"]
-
 
 [dependencies]
-bootloader = "~0.9.8"
-
+bootloader = "0.9.8"
 
 [[bin]]
 name = "rust_os"
 test = false
 bench = false
+
+[build-dependencies]
+qemu = "0.1.0"

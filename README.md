@@ -25,3 +25,4 @@ DAY4:Adding new code to the main file which give us text on a virtual matchine f
 DAY5:Adding some code for text vga buffer, A new rs file is added in sre folder named as "vga_buffer.rs" for printing text on bootloaderscreen.The vga_buffer is not fully finished but it will be finished soon as i get more time to work on this file.
 
 DAY6:Learning more about rust programming for complete understanding of code and concept of further development and debugging.
+DAY7:Fix the code and dependency on long command for running QEMU and now it can run  by "cargo run"
