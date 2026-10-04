@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+use spin::Mutex;
 use lazy_static::lazy_static;
 use core::fmt::{Write, Result};
 use volatile::Volatile;
@@ -51,11 +52,11 @@ pub struct Writer {
     buffer: &'static mut Buffer,
 }
 lazy_static! {
-    pub static ref WRITER: Writer = Writer {
+    pub static ref WRITER: Mutex<Writer> = Mutex::new(Writer {
         column_position:0,
         color_code: ColorCode::new(Color::Yellow, Color::Black),
         buffer: unsafe { &mut *(0xb8000 as *mut Buffer)},
-        };
+        });
 }
 
 impl Writer {
