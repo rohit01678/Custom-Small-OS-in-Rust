@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+use lazy_static::lazy_static;
 use core::fmt::{Write, Result};
 use volatile::Volatile;
 #[derive(Debug,Clone,Copy,PartialEq,Eq)]
@@ -48,6 +49,13 @@ pub struct Writer {
     column_position: usize,
     color_code: ColorCode,
     buffer: &'static mut Buffer,
+}
+lazy_static! {
+    pub static ref WRITER: Writer = Writer {
+        column_position:0,
+        color_code: ColorCode::new(Color::Yellow, Color::Black),
+        buffer: unsafe { &mut *(0xb8000 as *mut Buffer)},
+        };
 }
 
 impl Writer {
