@@ -9,12 +9,10 @@ I am currently  working on this Project.
 2.Install Rust nightly tools for congfig.toml for targeting json file beacause it will not set as a target until you install nightly and install  tool required for your build.
 
 3.After installing QEMU virtual matchine,U need to bootload the main file with nightly tools,I am mentioning the commands below i used to print the hello world program.
+
+4.You need to install all the tools for executing the commands below but don't worry I will soon add dockers for this after a finish this project.
 # COMMANDS 
-for bootloading.
-
-1.cargo +nightly bootimage.
-
-2.qemu-system-x86_64 -drive format=raw,file=target\x86_64-blog_os\debug\bootimage-rust_os.bin -serial stdio.
+cargo run //For running virtual machine  
 # Progress vlog and challenges
 Day 1&2:Trying to learn the basics of Rust like how to print a word or comment and making  a baic project file of rust and make a project repo for version control of the project to show case the project after completion.
 
