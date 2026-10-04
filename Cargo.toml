@@ -1,18 +1,15 @@
 [package]
 name = "rust_os"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
 bootloader = "0.9.8"
-volatile ="~0.2.6"
+volatile = "~0.2.6"
 
 [[bin]]
 name = "rust_os"
 test = false
 bench = false
-
-[build-dependencies]
-qemu = "0.1.0"
 
 

@@ -26,7 +26,7 @@ pub enum Color {
 struct ColorCode(u8);
 
 impl ColorCode {
-    fn new(foreground: Color, background: Color) -> ColorCode {
+    const fn new(foreground: Color, background: Color) -> ColorCode {
         ColorCode((background as u8) << 4 | (foreground as u8))
     }
 }
@@ -49,6 +49,7 @@ pub struct Writer {
     color_code: ColorCode,
     buffer: &'static mut Buffer,
 }
+
 impl Writer {
     pub fn write_byte(&mut self, byte: u8) {
         match byte {
@@ -78,7 +79,7 @@ impl Writer {
                 self.buffer.chars[row-1][col].write(character);
             }
         }
-        self.clear_row(BUFFER_HEIGHT -1);
+        self.clean_row(BUFFER_HEIGHT -1);
         self.column_position = 0;
     }
     fn clean_row(&mut self, row: usize){
@@ -91,8 +92,8 @@ impl Writer {
         }
     }
         }
-    }
-}
+    
+
 impl Writer {
     pub fn write_string(&mut self, s: &str) {
         for byte in s.bytes() {
