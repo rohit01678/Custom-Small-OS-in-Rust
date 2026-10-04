@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 use spin::Mutex;
 use lazy_static::lazy_static;
-use core::fmt::{Write, Result};
+use core::fmt::{Write, Result,Arguments};
 use volatile::Volatile;
 #[derive(Debug,Clone,Copy,PartialEq,Eq)]
 #[repr(u8)]
@@ -133,7 +133,7 @@ macro_rules! println {
     ($($arg:tt)*) => ($crate::print!("{}\n", format_args!($($arg)*)));
 }
 #[doc(hidden)]
-pub fn _print(args: core::fmt::Arguments) {
+pub fn _print(args: Arguments) {
     use core::fmt::Write;
     WRITER.lock().write_fmt(args).unwrap();
 }
