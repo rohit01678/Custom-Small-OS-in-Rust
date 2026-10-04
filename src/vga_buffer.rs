@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+use core::fmt::{Write, Result};
 use volatile::Volatile;
 #[derive(Debug,Clone,Copy,PartialEq,Eq)]
 #[repr(u8)]
@@ -85,6 +86,12 @@ impl Writer {
         }
     }
 }
+impl Write for Writer{
+    fn write_str(&mut self, s: &str) -> Result {
+        self.write_string(s);
+        Ok(())
+    }
+}
 pub fn print_something() {
     let mut writer = Writer {
         column_position: 0,
@@ -93,6 +100,6 @@ pub fn print_something() {
     };
 
     writer.write_byte(b'H');
-    writer.write_string("ello ");
-    writer.write_string("Wörld!");
+    writer.write_string("ello! ");
+    write!(writer, "The numbers are {} and {}", 42, 1.0/3.0).unwrap();
 }
