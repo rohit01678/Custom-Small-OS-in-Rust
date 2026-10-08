@@ -10,7 +10,7 @@ spin = "0.5.2"
 
 [[bin]]
 name = "rust_os"
-test = false
+test = true
 bench = false
 
 [dependencies.lazy_static]
