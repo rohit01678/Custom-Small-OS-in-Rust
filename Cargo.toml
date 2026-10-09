@@ -4,21 +4,22 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-bootloader= "0.9.22"
+bootloader = "=0.9.22"
+uart_16550 = "=0.2.15"
 volatile = "=0.2.6"
-spin = "0.5.2"
-x86_64 = "0.15.5"
+spin = "=0.5.2"
+x86_64 = { version = "=0.14.7", features = ["instructions"] }
+
+[dependencies.lazy_static]
+version = "=1.4.0"
+features = ["spin_no_std"]
 
 [[bin]]
 name = "rust_os"
 test = true
 bench = false
 
-[dependencies.lazy_static]
-version = "1.4.0"
-features = ["spin_no_std"]
-
 [package.metadata.bootimage]
-test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04"]
-
+test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04", "-serial", "stdio"]
+test-success-exit-code = 33
 
