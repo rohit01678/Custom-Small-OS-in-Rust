@@ -1,3 +1,4 @@
+//hours wasted on errors=6; if you are reading this, you are welcome to use this code for your own OS project.
 #![no_std] // don't link the Rust standard library
 #![no_main] // disable all Rust-level entry points
 #![feature(custom_test_frameworks)]
