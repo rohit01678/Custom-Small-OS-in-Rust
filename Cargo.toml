@@ -4,14 +4,14 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-bootloader = "=0.9.22"
-uart_16550 = "=0.2.15"
+bootloader = "0.9"
+uart_16550 = "0.3.2"
 volatile = "=0.2.6"
-spin = "=0.5.2"
-x86_64 = { version = "=0.14.7", features = ["instructions"] }
+spin = "0.5"
+x86_64 = { version = "0.14", features = ["instructions"] }
 
 [dependencies.lazy_static]
-version = "=1.4.0"
+version = "1.4"
 features = ["spin_no_std"]
 
 [[bin]]
@@ -20,12 +20,14 @@ test = true
 bench = false
 
 [package.metadata.bootimage]
-test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04", "-serial", "stdio"]
-test-success-exit-code = 33
+test-args = [
+    "-device", "isa-debug-exit,iobase=0xf4,iosize=0x04",
+    "-serial", "stdio",
+    "-display", "none"
+]
+test-success-exit-code = 33 
+test-timeout = 300
 
-[profile.dev]
-incremental = false
 
-[profile.release]
-incremental = false
-
+[lints.cargo]
+unused_dependencies = "allow"
