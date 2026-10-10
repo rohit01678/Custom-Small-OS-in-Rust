@@ -32,3 +32,5 @@ DAY7:Fix the code and dependency on long command for running QEMU and now it can
 DAY8&9:Completed the vga text buffer code to print text in our virtual machine and add println fuction to print panic and hello world without any lengthy code.
 
 DAY10:Making main modifiactation for testing in the rust kernal because we cannot use the standard library for our kernal testing.
+
+DAY11:Today i did some testing  on my and some modifications in main file while leads to some problems in  cargo build but i fixed it after a long time now the code run well.
