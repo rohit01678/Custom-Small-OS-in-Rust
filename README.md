@@ -34,3 +34,6 @@ DAY8&9:Completed the vga text buffer code to print text in our virtual machine a
 DAY10:Making main modifiactation for testing in the rust kernal because we cannot use the standard library for our kernal testing.
 
 DAY11:Today i did some testing  on my and some modifications in main file while leads to some problems in  cargo build but i fixed it after a long time now the code run well.
+
+
+DAY12:Did some editing and created some test cases and functions in vga buffers to run test.
