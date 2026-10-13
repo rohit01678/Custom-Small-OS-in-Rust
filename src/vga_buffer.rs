@@ -152,10 +152,10 @@ fn test_println_many(){
 
 #[test_case]
 fn test_println_output(){
-    let s = "some test string thst fits on a single line";
+    let s = "some test string that fits on a single line";
     println!("{}", s);
-    for (i, c) in s.chars().enumarate() {
-        let screen_char = WRITER.lock().buffer.chars[BUFFER_HEIGHTS-2][i].read();
+    for (i, c) in s.chars().enumerate() {
+        let screen_char = WRITER.lock().buffer.chars[BUFFER_HEIGHT - 2][i].read();
         assert_eq!(char::from(screen_char.ascii_character), c);
     }
 }
