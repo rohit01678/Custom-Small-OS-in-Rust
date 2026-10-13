@@ -35,5 +35,6 @@ DAY10:Making main modifiactation for testing in the rust kernal because we canno
 
 DAY11:Today i did some testing  on my and some modifications in main file while leads to some problems in  cargo build but i fixed it after a long time now the code run well.
 
-
 DAY12:Did some editing and created some test cases and functions in vga buffers to run test.
+
+DAY13:ADD a new file in tests folder(basic_boot.rs) to implement boot test framework.
