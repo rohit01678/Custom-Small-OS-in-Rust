@@ -73,6 +73,9 @@ Added a new boot test file in the `tests` folder to implement a custom boot test
 ### Day 14
 Extended the kernel test infrastructure in `lib.rs` and `basic_boot.rs` to improve integrity and future testing support.
 
+### Day 15
+Completed testing of the project’s custom test setup and resolved the panic-related integration test issue, confirming the OS tests now pass successfully.
+
 ## Notes
 
 This project is a learning journey focused on operating system concepts, Rust `no_std` development, bootloader integration, and bare-metal testing.
