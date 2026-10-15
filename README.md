@@ -1,42 +1,85 @@
-# Custom-Small-OS-in-Rust
-Inspiration-Blog.os.
+# Custom Small OS in Rust
 
-Hello Everyone.
+A personal project inspired by blog OS development, built in Rust to learn how an operating system boots, renders text to a VGA buffer, runs basic tests, and interacts with QEMU.
 
-I am currently  working on this Project.
-# Compiler
-1.You need to install a rust compiler in your code editor,I am using VS code in this case but you use whatever code editor you wantt so let's start this journey of making badass projects to become better at coding.
+## Overview
 
-2.Install Rust nightly tools for congfig.toml for targeting json file beacause it will not set as a target until you install nightly and install  tool required for your build.
+This project focuses on creating a minimal operating system kernel in Rust using a custom bootloader setup. It includes:
 
-3.After installing QEMU virtual matchine,U need to bootload the main file with nightly tools,I am mentioning the commands below i used to print the hello world program.
+- a minimal Rust kernel entry point
+- VGA text output support
+- serial output support
+- custom test infrastructure for no_std environments
+- QEMU-based execution and testing
 
-4.You need to install all the tools for executing the commands below but don't worry I will soon add dockers for this after a finish this project.
-# COMMANDS 
-cargo run //For running virtual machine.
+## Prerequisites
 
-cargo test //For running tests.
-# Progress vlog and challenges
-Day 1&2:Trying to learn the basics of Rust like how to print a word or comment and making  a baic project file of rust and make a project repo for version control of the project to show case the project after completion.
+Before running this project, install the following:
 
-Day 3:Making json file for disabling and enabling important functions in this file we have to add a lot of things which i don't know but it helps in learning more things.
+1. Rust and Cargo
+2. Rust nightly toolchain
+3. QEMU virtual machine
+4. The required nightly target and bootloader dependencies for the project
 
-DAY4:Adding new code to the main file which give us text on a virtual matchine from a vga buffer and you need some tools related to it like a virtual matchine like QEMU.
+## Setup
 
-DAY5:Adding some code for text vga buffer, A new rs file is added in sre folder named as "vga_buffer.rs" for printing text on bootloaderscreen.The vga_buffer is not fully finished but it will be finished soon as i get more time to work on this file.
+Make sure you are using the nightly toolchain required by the project, since this OS project uses features that are not available in stable Rust.
 
-DAY6:Learning more about rust programming for complete understanding of code and concept of further development and debugging.
+## Commands
 
-DAY7:Fix the code and dependency on long command for running QEMU and now it can run  by "cargo run"
+```bash
+cargo run
+cargo test
+```
 
-DAY8&9:Completed the vga text buffer code to print text in our virtual machine and add println fuction to print panic and hello world without any lengthy code.
+- `cargo run` runs the OS in QEMU.
+- `cargo test` runs the custom Rust kernel tests.
 
-DAY10:Making main modifiactation for testing in the rust kernal because we cannot use the standard library for our kernal testing.
+## Project Progress
 
-DAY11:Today i did some testing  on my and some modifications in main file while leads to some problems in  cargo build but i fixed it after a long time now the code run well.
+### Day 1 & 2
+Learned the basics of Rust, including printing text and setting up a basic project structure for version control and showcase.
 
-DAY12:Did some editing and created some test cases and functions in vga buffers to run test.
+### Day 3
+Created the JSON configuration needed for enabling and disabling important functions required for the project setup.
 
-DAY13:ADD a new file in tests folder(basic_boot.rs) to implement boot test framework.
+### Day 4
+Started adding code to produce text in a virtual machine using VGA output and QEMU.
 
-DAY14:Added some new code in lib.rs,basic_boot.rs to include some efficient test integrity for future needs.
+### Day 5
+Added the `vga_buffer.rs` file for printing text on the bootloader screen. The implementation was still evolving and required more work.
+
+### Day 6
+Deepened understanding of Rust concepts and kernel development fundamentals, with more focus on debugging and project structure.
+
+### Day 7
+Fixed the dependency and command setup so the project can run through `cargo run` more cleanly.
+
+### Day 8 & 9
+Completed the VGA text buffer implementation and added print/println support for outputting messages to the virtual machine screen.
+
+### Day 10
+Made modifications for kernel testing, since the standard library cannot be used in a bare-metal kernel environment.
+
+### Day 11
+Worked through several build issues and fixed problems caused by project changes, restoring successful execution.
+
+### Day 12
+Edited and improved the VGA buffer code and created test cases to validate the functionality.
+
+### Day 13
+Added a new boot test file in the `tests` folder to implement a custom boot testing framework.
+
+### Day 14
+Extended the kernel test infrastructure in `lib.rs` and `basic_boot.rs` to improve integrity and future testing support.
+
+## Notes
+
+This project is a learning journey focused on operating system concepts, Rust `no_std` development, bootloader integration, and bare-metal testing.
+
+## Future Goals
+
+- improve kernel structure
+- add more OS features
+- expand VGA and serial debugging tools
+- work toward a more complete minimal kernel
