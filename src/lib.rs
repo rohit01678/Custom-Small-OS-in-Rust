@@ -75,3 +75,4 @@ fn panic(info: &PanicInfo) -> ! {
 fn panic(info: &PanicInfo) -> ! {
     test_panic_handler(info)
 }
+
