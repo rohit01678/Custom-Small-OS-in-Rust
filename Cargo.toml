@@ -31,3 +31,7 @@ test-timeout = 300
 
 [lints.cargo]
 unused_dependencies = "allow"
+
+[[test]]
+name = "should_panic"
+harness = false
