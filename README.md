@@ -38,3 +38,5 @@ DAY11:Today i did some testing  on my and some modifications in main file while 
 DAY12:Did some editing and created some test cases and functions in vga buffers to run test.
 
 DAY13:ADD a new file in tests folder(basic_boot.rs) to implement boot test framework.
+
+DAY14:Added some new code in lib.rs,basic_boot.rs to include some efficient test integrity for future needs.
