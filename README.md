@@ -76,6 +76,16 @@ Extended the kernel test infrastructure in `lib.rs` and `basic_boot.rs` to impro
 ### Day 15
 Completed testing of the project’s custom test setup and resolved the panic-related integration test issue, confirming the OS tests now pass successfully.
 
+### Day 16
+Fixed the compile issue in the interrupt descriptor table setup by correcting the `lazy_static!` pattern and aligning the exported initialization function with the kernel entry point. Confirmed that the project builds successfully again after the fix.
+
+### Today’s Work
+- Reviewed the Rust kernel code and identified the root cause behind the build failure.
+- Fixed the interrupt initialization bug in `src/interrupts.rs`.
+- Updated the library init function in `src/lib.rs` to match the entry-point call pattern.
+- Verified the project builds cleanly using `cargo build --quiet`.
+- Continued improving understanding of bare-metal Rust, interrupt handling, and kernel initialization flow.
+
 ## Notes
 
 This project is a learning journey focused on operating system concepts, Rust `no_std` development, bootloader integration, and bare-metal testing.
