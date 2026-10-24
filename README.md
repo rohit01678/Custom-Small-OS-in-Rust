@@ -79,11 +79,15 @@ Completed testing of the project’s custom test setup and resolved the panic-re
 ### Day 16
 Fixed the compile issue in the interrupt descriptor table setup by correcting the `lazy_static!` pattern and aligning the exported initialization function with the kernel entry point. Confirmed that the project builds successfully again after the fix.
 
+### Day 17
+Reviewed the stack overflow trigger in the kernel entry point and confirmed that the recursion pattern is conceptually correct for demonstrating an overflow in a bare-metal OS. Identified that the project still needs a proper guard-page or exception-based stack overflow handling setup to behave like a real kernel-level stack overflow scenario. Continued improving understanding of bare-metal stack behavior, interrupt handling, and the operating system boot flow.
+
 ### Today’s Work
 - Reviewed the Rust kernel code and identified the root cause behind the build failure.
 - Fixed the interrupt initialization bug in `src/interrupts.rs`.
 - Updated the library init function in `src/lib.rs` to match the entry-point call pattern.
 - Verified the project builds cleanly using `cargo build --quiet`.
+- Reviewed the stack overflow example and clarified the difference between a recursive overflow demonstration and a proper guard-page based kernel overflow handling strategy.
 - Continued improving understanding of bare-metal Rust, interrupt handling, and kernel initialization flow.
 
 ## Notes
