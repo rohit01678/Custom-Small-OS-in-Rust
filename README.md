@@ -82,11 +82,14 @@ Fixed the compile issue in the interrupt descriptor table setup by correcting th
 ### Day 17
 Reviewed the stack overflow trigger in the kernel entry point and confirmed that the recursion pattern is conceptually correct for demonstrating an overflow in a bare-metal OS. Identified that the project still needs a proper guard-page or exception-based stack overflow handling setup to behave like a real kernel-level stack overflow scenario. Continued improving understanding of bare-metal stack behavior, interrupt handling, and the operating system boot flow.
 
+### Day 18
+Fixed the GDT initialization issue in `src/gdt.rs` by correcting the `lazy_static!` block, modernizing the x86_64 API calls, and updating the TSS stack setup to the current Rust semantics. Verified that the project now builds and runs successfully with `cargo run`, confirming the kernel boot sequence proceeds without the earlier compile-time errors.
+
 ### Today’s Work
 - Reviewed the Rust kernel code and identified the root cause behind the build failure.
-- Fixed the interrupt initialization bug in `src/interrupts.rs`.
-- Updated the library init function in `src/lib.rs` to match the entry-point call pattern.
-- Verified the project builds cleanly using `cargo build --quiet`.
+- Fixed the GDT setup in `src/gdt.rs` using the correct `lazy_static!` pattern and current x86_64 API names.
+- Verified the project compiles successfully with `cargo build`.
+- Ran the OS in QEMU with `cargo run`, confirming the boot workflow proceeds without the original compile-time failure.
 - Reviewed the stack overflow example and clarified the difference between a recursive overflow demonstration and a proper guard-page based kernel overflow handling strategy.
 - Continued improving understanding of bare-metal Rust, interrupt handling, and kernel initialization flow.
 
