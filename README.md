@@ -85,13 +85,18 @@ Reviewed the stack overflow trigger in the kernel entry point and confirmed that
 ### Day 18
 Fixed the GDT initialization issue in `src/gdt.rs` by correcting the `lazy_static!` block, modernizing the x86_64 API calls, and updating the TSS stack setup to the current Rust semantics. Verified that the project now builds and runs successfully with `cargo run`, confirming the kernel boot sequence proceeds without the earlier compile-time errors.
 
+### Day 19
+Resolved the final Windows/QEMU runtime issues by cleaning stale processes and bootimage artifacts, confirming that the kernel now launches correctly in QEMU with the graphical display setup. Validated the project with a fresh `cargo clean; cargo run`, and confirmed the OS reaches the VM launch step without the earlier permission-denied or compile-time failure. Reviewed the output path differences between serial console output and VGA/QEMU display output, and confirmed the project is running in the correct display mode for bare-metal kernel debugging.
+
 ### Today’s Work
 - Reviewed the Rust kernel code and identified the root cause behind the build failure.
 - Fixed the GDT setup in `src/gdt.rs` using the correct `lazy_static!` pattern and current x86_64 API names.
 - Verified the project compiles successfully with `cargo build`.
 - Ran the OS in QEMU with `cargo run`, confirming the boot workflow proceeds without the original compile-time failure.
 - Reviewed the stack overflow example and clarified the difference between a recursive overflow demonstration and a proper guard-page based kernel overflow handling strategy.
-- Continued improving understanding of bare-metal Rust, interrupt handling, and kernel initialization flow.
+- Cleaned stale QEMU and bootimage artifacts on Windows so the project could complete a clean launch again.
+- Verified the OS launches successfully in QEMU using the graphical display configuration and documented the difference between serial and VGA output.
+- Continued improving understanding of bare-metal Rust, interrupt handling, kernel initialization flow, and VM display behavior.
 
 ## Notes
 
